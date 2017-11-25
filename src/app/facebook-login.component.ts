@@ -22,5 +22,9 @@ export class FacebookLoginComponent {
   loginWithFacebook(): void{
     this.fb.login().then((response: LoginResponse) => console.log(response)).catch((error: any) => console.error(error));
   }
+
+  trial(): void{
+    alert("Tere");
+  }
 }
 
