@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +23,9 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     FacebookModule.forRoot(),
     HttpModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBkiVUBMrD2Ht5IlkDU4Oa8Nmva21K6tn0'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

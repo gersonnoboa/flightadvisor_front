@@ -1,12 +1,3 @@
-<script>
-    console.log(1);
-        function initt() {
-            
-            initMap(google)
-        }
-</script>
-<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkiVUBMrD2Ht5IlkDU4Oa8Nmva21K6tn0&callback=initt'></script>
-
 <div class="container">
         <h1 class="my-4">Flight Advisor</h1>
 
@@ -21,8 +12,22 @@
                 Malmo
             </div>
           </div>
-  
-          <div style="width:400px;height:400px" class="col-md-3" id="map"></div>
+          
+          <agm-map [zoom] = 5 class="col-md-3" style="width:400px;height:400px" [latitude]="60.4245987" [longitude]="18.5186409">
+            <agm-marker *ngFor="let m of markers" [latitude]="m.lat" [longitude]="m.lng"></agm-marker>
+            <agm-polyline [strokeColor]="f0bf29" [geodesic]="true">
+                <agm-polyline-point [latitude]="markers[0].lat" [longitude]="markers[0].lng"></agm-polyline-point>
+                <agm-polyline-point [latitude]="markers[1].lat" [longitude]="markers[1].lng"></agm-polyline-point>
+            </agm-polyline>
+            <agm-polyline>
+                <agm-polyline-point [latitude]="markers[1].lat" [longitude]="markers[1].lng"></agm-polyline-point>
+                <agm-polyline-point [latitude]="markers[2].lat" [longitude]="markers[2].lng"></agm-polyline-point>
+            </agm-polyline>
+            <agm-polyline>
+                <agm-polyline-point [latitude]="markers[1].lat" [longitude]="markers[1].lng"></agm-polyline-point>
+                <agm-polyline-point [latitude]="markers[3].lat" [longitude]="markers[3].lng"></agm-polyline-point>
+            </agm-polyline>
+          </agm-map>
 
           <div class="col-md-3">
           </div>
