@@ -58,7 +58,7 @@ export class FacebookLoginComponent {
   }
 
   loopThroughLikes(response){
-
+    console.log("going through likes");
     let data = response.data;
     let dataLength: number = data.length;
 
@@ -73,13 +73,28 @@ export class FacebookLoginComponent {
       this.executePaging(paging.next);
     }
     else{
-      console.log(this.userLikes);
+      this.sendInformationToNode();
     }
 
   }
 
   executePaging(link: string){
+    console.log("executing paging");
     this.http.get(link).subscribe(response => this.loopThroughLikes(response.json()));
+  }
+
+  sendInformationToNode(){
+    console.log("information retrieved successfully");
+    var obj = {
+      response: JSON.stringify(this.response),
+      likes: JSON.stringify(this.userLikes)
+    }
+
+    this.http.post("http://localhost:5001/api/facebook", JSON.stringify(obj)).subscribe(
+      function(response) { console.log("Success Response" + response)},
+      function(error) { console.log("Error happened" + error)},
+      function() { console.log("the subscription is completed")}
+  );;
   }
 
 }

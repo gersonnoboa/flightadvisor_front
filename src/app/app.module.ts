@@ -22,7 +22,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     AppRoutingModule,
     FacebookModule.forRoot(),
-    HttpModule
+    HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBkiVUBMrD2Ht5IlkDU4Oa8Nmva21K6tn0'
     })
