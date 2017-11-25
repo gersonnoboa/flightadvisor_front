@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FacebookModule } from 'ngx-facebook';
+import { FacebookLoginComponent } from './facebook-login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, 
+    FacebookLoginComponent
   ],
   imports: [
     BrowserModule,
