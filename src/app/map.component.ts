@@ -19,6 +19,9 @@ export class MapComponent  {
 	//   };
 
     // fb.init(params);
+
+
+    this.initMap(null);
 	}
 
   initMap(google): void{

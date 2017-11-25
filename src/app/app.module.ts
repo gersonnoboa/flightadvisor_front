@@ -9,6 +9,7 @@ import { MapComponent } from './map.component';
 import { FacebookModule } from 'ngx-facebook';
 import { FacebookLoginComponent } from './facebook-login.component';
 
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FacebookLoginComponent } from './facebook-login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
