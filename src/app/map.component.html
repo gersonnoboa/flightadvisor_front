@@ -1,0 +1,29 @@
+<script>
+        function initt() {
+            console.log(1)
+            initMap(google)
+        }
+</script>
+<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkiVUBMrD2Ht5IlkDU4Oa8Nmva21K6tn0&callback=initt'></script>
+
+<div class="container">
+        <h1 class="my-4">Flight Advisor</h1>
+
+        <h3 class="my-4">Destination Point: Stockholm</h3>
+        <div class="row">
+          <div class="col-md-3">
+            FinnAir recommends:
+            <div>
+                Gothenborg
+            </div>
+            <div>
+                Malmo
+            </div>
+          </div>
+  
+          <div style="width:400px;height:400px" class="col-md-3" id="map"></div>
+
+          <div class="col-md-3">
+          </div>
+        </div>
+</div>

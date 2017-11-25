@@ -6,63 +6,8 @@
   <base href="/">
   <link href="static/bootstrap.min.css" rel="stylesheet">
 
-  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBkiVUBMrD2Ht5IlkDU4Oa8Nmva21K6tn0&callback=initMap'/>
-
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-
-  <script>
-      function initMap() {
-        var helsinki_airport = {lat: 60.3210442, lng: 24.9353509};
-        var stockholm_airport = {lat: 59.3548147, lng: 17.940533};
-        var gotheborg_airport = {lat: 57.6688019, lng: 12.2901253};
-
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5,
-          center: {lat: 60.4245987, lng: 18.5186409}
-        });
-
-        // Only those that above the threshold, up to 3 cities
-        var top3choices = [gotheborg_airport]
-
-        for(var i = 0; i < top3choices.length; i++) {
-          new google.maps.Polyline({
-            path: [stockholm_airport, top3choices[i]],
-            geodesic: true,
-            strokeColor: '#f0bf29',
-            strokeOpacity: 1.0,
-            strokeWeight: 2,
-            map: map
-          });
-
-          new google.maps.Marker({
-            position: top3choices[i],
-            map: map
-          });
-        }
-        
-        var marker = new google.maps.Marker({
-          position: helsinki_airport,
-          map: map
-        });
-
-        new google.maps.Marker({
-          position: stockholm_airport,
-          map: map
-        });
-
-        new google.maps.Polyline({
-          path: [helsinki_airport, stockholm_airport],
-          geodesic: true,
-          strokeColor: '#C8515F',
-          strokeOpacity: 1.0,
-          strokeWeight: 2,
-          map: map
-        });
-
-      }
-  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -70,32 +15,6 @@
 </head>
 
 <body>
-    
-        <app-root></app-root>
-        
-        <div class="container">
-          <h1 class="my-4">Flight Advisor</h1>
-
-          <h3 class="my-4">Destination Point: Stockholm</h3>
-          <div class="row">
-            <div class="col-md-3">
-              FinnAir recommends:
-              <div>
-                  Gothenborg
-              </div>
-              <div>
-                  Malmo
-              </div>
-            </div>
-    
-            <div style="width:400px;height:400px" class="col-md-3" id="map"></div>
-
-            <div class="col-md-3">
-            </div>
-          </div>
-        </div>
-        
-        
-    
-      </body>
+  <app-root></app-root>
+</body>
 </html>
