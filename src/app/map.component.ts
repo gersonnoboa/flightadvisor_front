@@ -13,11 +13,13 @@ export class MapComponent  {
     var stockholm_airport = {lat: 59.3548147, lng: 17.940533};
     var gotheborg_airport = {lat: 57.6688019, lng: 12.2901253};
     var malmo_airport = {lat: 55.5355366, lng: 13.3701943};
+    var copen_airport = {lat: 55.6180236, lng: 12.6485741};
 
     this.markers.push(helsinki_airport)
     this.markers.push(stockholm_airport)
     this.markers.push(gotheborg_airport)
     this.markers.push(malmo_airport)
+    this.markers.push(copen_airport)
 	}
 
   initMap(google): void{
